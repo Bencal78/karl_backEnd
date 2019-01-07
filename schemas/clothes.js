@@ -9,6 +9,7 @@ var schema = new Schema({
   fabrics: String,
   temperature: Number,
   pattern: String,
+  layer: Number,
 }, {versionKey: 'version'});
 
 
