@@ -6,8 +6,9 @@ var schema = new Schema({
   category : String,
   bodyparts: [ Number ],
   colors: [ String ],
-  fabrics: [ String ],
-  temperature: Number
+  fabrics: String,
+  temperature: Number,
+  pattern: String,
 }, {versionKey: 'version'});
 
 
