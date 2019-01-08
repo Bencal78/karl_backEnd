@@ -20,17 +20,37 @@ const get = async (req, res, next) => {
 
 
 const update = async (req, res, next) => {
-  id = req.body._id;
-  if(id) {
-    return model.get({_id: id}).then(result => {
-        if (result && result.length > 0) {
-            return model.update(req.body).then(Updated => {
-                return res.status(200).json({message: 'success.'});
-            });
-        } else return res.status(400).json({error: 'Invalid data.'});
-    }).catch(function(e){
-        next(e);
+  let body = req.body;
+  if(Array.isArray(body)){
+    let res_arr = []
+    let id;
+    body.forEach(b => {
+      id = b._id;
+      res_arr.push(model.get({_id: id}).then(result => {
+            if (result && result.length > 0) {
+                return model.update(b).then(Updated => {
+                    return "200";
+                });
+            } else return "400";
+        }).catch(function(e){
+            next(e);
+      }));
     });
+    return res.status(202).json({message: "updated", promises: res_arr});
+  }
+  else{
+    id = body._id;
+    if(id) {
+      return model.get({_id: id}).then(result => {
+          if (result && result.length > 0) {
+              return model.update(req.body).then(Updated => {
+                  return res.status(200).json({message: 'success.'});
+              });
+          } else return res.status(400).json({error: 'Invalid data.'});
+      }).catch(function(e){
+          next(e);
+      });
+    }
   }
 };
 
