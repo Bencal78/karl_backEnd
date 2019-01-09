@@ -10,6 +10,8 @@ router.put('/', controller.update);
 
 router.put('/addTaste/', controller.addTaste);
 
+router.put('/addClothe/', controller.addClothe);
+
 router.delete('/', controller.del);
 
 
