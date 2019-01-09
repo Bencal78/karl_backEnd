@@ -40,6 +40,16 @@ exports.addTaste = function(body) {
   });
 };
 
+exports.addClothe = function(body) {
+  return User.findOne({_id: body._id}, function(err, usr){
+    body.clothes.forEach(c => {
+      usr.clothes.push(c)
+    });
+    usr.save(function(err) {
+    });
+  });
+};
+
 exports.delete = function(values) {
   return User.deleteMany(values, function (err) {
     if (err) return handleError(err);
