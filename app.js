@@ -10,8 +10,10 @@ app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
 
 var clothes = require('./routes/clothes'); //ajouter un truc comme ca quand on crée une nouvelle "class"
 var users = require('./routes/users');
+var pyreq = require('./routes/pyreq')
 app.use('/api/clothes', clothes); //ajouter un truc comme ca quand on crée une nouvelle "class"
 app.use('/api/users', users);
+app.use('/api/pyreq', pyreq);
 
 
 module.exports = app;

@@ -1,0 +1,1347 @@
+{"clothes" :    
+    [
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c33759bf946f80646b32d08",
+            "fabrics": "jean",
+            "name": "black jean",
+            "category": "jean",
+            "pattern": "uni",
+            "temperature": 5,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c3376c3f946f80646b32d0a",
+            "fabrics": "cotton",
+            "name": "bleu shirt",
+            "category": "shirt",
+            "temperature": 3,
+            "pattern": "printed",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c33788ff946f80646b32d0b",
+            "fabrics": "wool",
+            "name": "black sweater",
+            "category": "sweater",
+            "pattern": "uni",
+            "temperature": 5,
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "purple"
+            ],
+            "_id": "5c337903f946f80646b32d0c",
+            "fabrics": "unknown",
+            "name": "purple jogging",
+            "category": "jogging",
+            "pattern": "uni",
+            "temperature": 5,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c337953f946f80646b32d0d",
+            "fabrics": "wool",
+            "name": "black trench",
+            "category": "trench",
+            "pattern": "uni",
+            "temperature": 8,
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2
+            ],
+            "colors": [
+                "red"
+            ],
+            "_id": "5c337ab0f946f80646b32d0e",
+            "fabrics": "cotton",
+            "name": "red tank top",
+            "category": "tanktop",
+            "temperature": 1,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "colors": [
+                "yellow"
+            ],
+            "_id": "5c337b4af946f80646b32d0f",
+            "fabrics": "unknown",
+            "name": "yellow coat",
+            "category": "coat",
+            "temperature": 9,
+            "layer": 3,
+            "pattern": "uni",
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c337b53f946f80646b32d10",
+            "fabrics": "cloth",
+            "name": "black work pants",
+            "category": "pants",
+            "temperature": 4,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c337c2bf946f80646b32d11",
+            "fabrics": "canvas",
+            "name": "blue coat",
+            "category": "coat",
+            "temperature": 9,
+            "pattern": "uni",
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue",
+                "white",
+                "red"
+            ],
+            "_id": "5c337c96f946f80646b32d12",
+            "fabrics": "wool",
+            "name": "Xmas sweater",
+            "category": "sweater",
+            "temperature": 6,
+            "pattern": "Xmas",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c337d97f946f80646b32d13",
+            "fabrics": "cloth",
+            "name": "blue work pants",
+            "category": "pants",
+            "temperature": 4,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c337d9cf946f80646b32d14",
+            "fabrics": "leather",
+            "name": "black vest",
+            "category": "vest",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c337dfff946f80646b32d15",
+            "fabrics": "cotton",
+            "name": "blue sweater",
+            "category": "sweater",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "brown"
+            ],
+            "_id": "5c337e66f946f80646b32d16",
+            "fabrics": "cotton",
+            "name": "brown turtle neck",
+            "category": "turtleneck",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6
+            ],
+            "colors": [
+                "grey"
+            ],
+            "_id": "5c337f96f946f80646b32d19",
+            "fabrics": "jean",
+            "name": "grey shorts",
+            "category": "shorts",
+            "temperature": 2,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6
+            ],
+            "colors": [
+                "brown"
+            ],
+            "_id": "5c337fe1f946f80646b32d1a",
+            "fabrics": "leather",
+            "name": "brown skirt",
+            "category": "skirt",
+            "temperature": 2,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6
+            ],
+            "colors": [
+                "brown",
+                "beige",
+                "white"
+            ],
+            "_id": "5c338147f946f80646b32d1b",
+            "fabrics": "cotton",
+            "name": "check skirt",
+            "category": "skirt",
+            "pattern": "pledge",
+            "temperature": 2,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c33815cf946f80646b32d1c",
+            "fabrics": "jean",
+            "name": "jean vest",
+            "category": "vest",
+            "pattern": "uni",
+            "temperature": 4,
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6
+            ],
+            "colors": [
+                "red"
+            ],
+            "_id": "5c3394b48234561ce924f6fe",
+            "name": "long red skirt",
+            "category": "skirt",
+            "fabrics": "suede",
+            "temperature": 3,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "brown"
+            ],
+            "_id": "5c33956d8234561ce924f700",
+            "name": "velor brown pants",
+            "category": "pants",
+            "fabrics": "velor",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c33a0d78234561ce924f701",
+            "name": "black coat",
+            "category": "coat",
+            "fabrics": "unknown",
+            "temperature": 9,
+            "pattern": "uni",
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "bleu"
+            ],
+            "_id": "5c33a1508234561ce924f702",
+            "name": "blue jean",
+            "category": "jean",
+            "fabrics": "jean",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "green",
+                "white"
+            ],
+            "_id": "5c33a1c38234561ce924f703",
+            "name": "green sweater",
+            "category": "sweater",
+            "fabrics": "cotton",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "black",
+                "white",
+                "green"
+            ],
+            "_id": "5c33a20e8234561ce924f704",
+            "name": "black check pants",
+            "category": "pants",
+            "fabrics": "unknown",
+            "temperature": 5,
+            "pattern": "check",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c33a3158234561ce924f706",
+            "name": "leather black pants",
+            "category": "pants",
+            "fabrics": "leather",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "red"
+            ],
+            "_id": "5c33a41a8234561ce924f708",
+            "name": "false fur sweater",
+            "category": "sweater",
+            "fabrics": "fur",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "white",
+                "black"
+            ],
+            "_id": "5c33a46a8234561ce924f709",
+            "name": "striped pants",
+            "category": "pants",
+            "fabrics": "canvas",
+            "temperature": 4,
+            "pattern": "striped",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "grey"
+            ],
+            "_id": "5c34731b77b02507b1cbc212",
+            "name": "grey coat",
+            "category": "coat",
+            "fabrics": "synthetic",
+            "temperature": 8,
+            "pattern": "uni",
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "orange"
+            ],
+            "_id": "5c34745077b02507b1cbc214",
+            "name": "orange sweat",
+            "category": "sweatshirt",
+            "fabrics": "wool",
+            "temperature": 7,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "black",
+                "grey"
+            ],
+            "_id": "5c34752f77b02507b1cbc215",
+            "name": "legging millitaire",
+            "category": "legging",
+            "fabrics": "synthetic",
+            "temperature": 4,
+            "pattern": "camo",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "beige"
+            ],
+            "_id": "5c3373f8f946f80646b32d06",
+            "fabrics": "unknown",
+            "name": "beige pants",
+            "category": "pants",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "black",
+                "red"
+            ],
+            "_id": "5c3374d5f946f80646b32d07",
+            "fabrics": "cotton",
+            "name": "black hoodie",
+            "category": "hoodie",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue",
+                "white",
+                "pink"
+            ],
+            "_id": "5c337eb3f946f80646b32d17",
+            "fabrics": "wool",
+            "name": "blue sweater",
+            "category": "sweater",
+            "temperature": 4,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "colors": [
+                "brown"
+            ],
+            "_id": "5c337f87f946f80646b32d18",
+            "fabrics": "suede",
+            "name": "brown coat",
+            "category": "coat",
+            "temperature": 8,
+            "pattern": "uni",
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "red",
+                "white"
+            ],
+            "_id": "5c3381f7f946f80646b32d1d",
+            "fabrics": "unknown",
+            "name": "check red shirt",
+            "category": "shirt",
+            "temperature": 4,
+            "pattern": "check",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "taupe"
+            ],
+            "_id": "5c33822ff946f80646b32d1e",
+            "fabrics": "cotton",
+            "name": "taupe hoodie",
+            "category": "hoodie",
+            "pattern": "uni",
+            "temperature": 5,
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "orange"
+            ],
+            "_id": "5c338323f946f80646b32d20",
+            "fabrics": "unknown",
+            "name": "orange tshirt",
+            "category": "tshirt",
+            "pattern": "uni",
+            "temperature": 3,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "white"
+            ],
+            "_id": "5c3383a8f946f80646b32d21",
+            "fabrics": "unknown",
+            "name": "white tshirt",
+            "category": "tshirt",
+            "temperature": 3,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "pink"
+            ],
+            "_id": "5c3383f3f946f80646b32d23",
+            "fabrics": "unknown",
+            "name": "pink tshirt",
+            "category": "tshirt",
+            "pattern": "uni",
+            "temperature": 3,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "red"
+            ],
+            "_id": "5c338435f946f80646b32d24",
+            "fabrics": "unknown",
+            "name": "red tshirt",
+            "category": "tshirt",
+            "pattern": "uni",
+            "temperature": 3,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "red",
+                "white"
+            ],
+            "_id": "5c3384b4f946f80646b32d26",
+            "fabrics": "cotton",
+            "name": "printed shirt",
+            "category": "shirt",
+            "pattern": "printed",
+            "temperature": 4,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c3384eaf946f80646b32d27",
+            "fabrics": "jean",
+            "name": "jean shirt",
+            "category": "shirt",
+            "pattern": "uni",
+            "temperature": 4,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "white"
+            ],
+            "_id": "5c338516f946f80646b32d28",
+            "fabrics": "cloth",
+            "name": "white shirt",
+            "category": "shirt",
+            "pattern": "uni",
+            "temperature": 3,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c33854bf946f80646b32d29",
+            "fabrics": "cotton",
+            "name": "blue shirt",
+            "category": "shirt",
+            "temperature": 2,
+            "pattern": "lace",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "blue",
+                "white"
+            ],
+            "_id": "5c338584f946f80646b32d2a",
+            "fabrics": "cotton",
+            "name": "blue tshirt",
+            "category": "tshirt",
+            "pattern": "uni",
+            "temperature": 3,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "pink"
+            ],
+            "_id": "5c3385b4f946f80646b32d2b",
+            "fabrics": "cotton",
+            "name": "pink shirt",
+            "category": "shirt",
+            "pattern": "lace",
+            "temperature": 2,
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "blue",
+                "white"
+            ],
+            "_id": "5c3385e5f946f80646b32d2c",
+            "fabrics": "cotton",
+            "name": "white tshirt",
+            "category": "tshirt",
+            "temperature": 3,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "red"
+            ],
+            "_id": "5c338b05b03bdf179c54fffc",
+            "name": "red shirt",
+            "category": "shirt",
+            "fabrics": "cotton",
+            "temperature": 3,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c33905bb03bdf179c54fffd",
+            "name": "black polo",
+            "category": "polo",
+            "fabrics": "cotton",
+            "temperature": 2,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "grey"
+            ],
+            "_id": "5c339130b03bdf179c54fffe",
+            "name": "grey turtleneck",
+            "category": "turtleneck",
+            "fabrics": "wool",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "red",
+                "white",
+                "pink"
+            ],
+            "_id": "5c339180b03bdf179c54ffff",
+            "name": "printed pants",
+            "category": "pants",
+            "fabrics": "unknown",
+            "temperature": 5,
+            "pattern": "printed",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "white",
+                "pink",
+                "green"
+            ],
+            "_id": "5c339214b03bdf179c550000",
+            "name": "Xmas sweater",
+            "category": "sweaeter",
+            "fabrics": "wool",
+            "temperature": 6,
+            "pattern": "Xmas",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c33926cb03bdf179c550001",
+            "name": "black leather short",
+            "category": "short",
+            "fabrics": "leather",
+            "temperature": 2,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "red"
+            ],
+            "_id": "5c3393a18234561ce924f6fc",
+            "name": "red sweater",
+            "category": "sweater",
+            "fabrics": "wool",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "red"
+            ],
+            "_id": "5c3394608234561ce924f6fd",
+            "name": "red velor pants",
+            "category": "pants",
+            "fabrics": "velor",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "white",
+                "black",
+                "red"
+            ],
+            "_id": "5c3395138234561ce924f6ff",
+            "name": "salor sweater",
+            "category": "sweater",
+            "fabrics": "cotton",
+            "temperature": 5,
+            "pattern": "salor",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "black",
+                "white",
+                "blue"
+            ],
+            "_id": "5c33a2b68234561ce924f705",
+            "name": "striped sweater",
+            "category": "sweater",
+            "fabrics": "cotton",
+            "temperature": 5,
+            "pattern": "striped",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3
+            ],
+            "colors": [
+                "black",
+                "blue",
+                "white"
+            ],
+            "_id": "5c33a3b28234561ce924f707",
+            "name": "flowery tank top",
+            "category": "tank top",
+            "fabrics": "unknown",
+            "temperature": 2,
+            "pattern": "flowery",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "blue",
+                "green",
+                "white"
+            ],
+            "_id": "5c3383cef946f80646b32d22",
+            "fabrics": "cotton",
+            "name": "flowery shirt",
+            "category": "shirt",
+            "temperature": 4,
+            "pattern": "flowery",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "blue"
+            ],
+            "_id": "5c34720c77b02507b1cbc211",
+            "name": "blue jean",
+            "category": "jean",
+            "fabrics": "jean",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "grey",
+                "blue",
+                "white"
+            ],
+            "_id": "5c3473d177b02507b1cbc213",
+            "name": "grey blue sweat",
+            "category": "sweatshirt",
+            "fabrics": "cotton",
+            "temperature": 6,
+            "pattern": "stripped",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "red",
+                "yellow",
+                "purple",
+                "white"
+            ],
+            "_id": "5c3475e877b02507b1cbc216",
+            "name": "native american pullover",
+            "category": "sweat",
+            "fabrics": "wool",
+            "temperature": 6,
+            "pattern": "printed",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "yellow"
+            ],
+            "_id": "5c34770f77b02507b1cbc217",
+            "name": "yellow pants",
+            "category": "pants",
+            "fabrics": "cotton",
+            "temperature": 4,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "burgundy"
+            ],
+            "_id": "5c3477bc77b02507b1cbc218",
+            "name": "burgundy legging",
+            "category": "legging",
+            "fabrics": "synthetic",
+            "temperature": 3,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c3479ac77b02507b1cbc219",
+            "name": "sarouel noir",
+            "category": "sarouel",
+            "fabrics": "cotton",
+            "temperature": 5,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                5,
+                6,
+                7
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c347b7d77b02507b1cbc21a",
+            "name": "sweat scintillant",
+            "category": "sarouel",
+            "fabrics": "wool",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2
+            ],
+            "colors": [
+                "turquoise"
+            ],
+            "_id": "5c347c8d77b02507b1cbc21b",
+            "name": "turquoise tanktop",
+            "category": "tanktop",
+            "fabrics": "cotton",
+            "temperature": 1,
+            "pattern": "uni",
+            "layer": 1,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "black"
+            ],
+            "_id": "5c347d7c77b02507b1cbc21c",
+            "name": "princess sweater",
+            "category": "sweater",
+            "fabrics": "cotton",
+            "temperature": 6,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "yellow"
+            ],
+            "_id": "5c347dc577b02507b1cbc21d",
+            "name": "yellow coat",
+            "category": "coat",
+            "fabrics": "synthetic",
+            "temperature": 7,
+            "pattern": "uni",
+            "layer": 3,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "orange"
+            ],
+            "_id": "5c347ea877b02507b1cbc21e",
+            "name": "orange sweater",
+            "category": "sweater",
+            "fabrics": "wool",
+            "temperature": 7,
+            "pattern": "uni",
+            "layer": 2,
+            "version": 0
+        },
+        {
+            "bodyparts": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "colors": [
+                "burgundy"
+            ],
+            "_id": "5c347f6877b02507b1cbc21f",
+            "name": "burgundy coat",
+            "category": "coat",
+            "fabrics": "synthetic",
+            "temperature": 7,
+            "pattern": "uni",
+            "layer": 3,
+            "version": 0
+        }
+    ]
+}
