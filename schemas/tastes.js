@@ -1,9 +1,4 @@
 var client = require('../helpers/mongoClient');
-var Schema = client.Schema;
+var TatsteSchema = require('./tasteSchema');
 
-var schema = new Schema({
-    decision : Boolean,
-		clothes: [String]
-}, {versionKey: 'version'});
-
-module.exports = schema;
+module.exports = client.model('decision', TatsteSchema);
