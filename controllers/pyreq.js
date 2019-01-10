@@ -19,7 +19,7 @@ const get = async (req, res, next) => {
   	}
   	catch (e){
       	return next(e);
-  	}	
+  	}
   	var user = user.toJSON()
   	var clothes_json = {"clothes": user.clothes}
   	console.log(clothes_json)
