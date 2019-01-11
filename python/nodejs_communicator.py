@@ -12,6 +12,7 @@ def return_outfit():
 
 if __name__ == "__main__":
     functions = {'return_outfit': return_outfit}
+
     res_json = functions[sys.argv[1]]()
 
     print({"outfit": res_json})
