@@ -12,7 +12,8 @@ def return_outfit():
 
 if __name__ == "__main__":
     functions = {'return_outfit': return_outfit}
-
-    res_json = functions[sys.argv[1]]()
-
+    try:
+        res_json = functions[sys.argv[1]]()
+    except Exception as e:
+            print(e)
     print({"outfit": res_json})
