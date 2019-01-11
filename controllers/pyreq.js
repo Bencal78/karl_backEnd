@@ -24,7 +24,7 @@ const get = async (req, res, next) => {
   	var clothes_json = {"clothes": user.clothes}
   	var clothes_string = JSON.stringify(clothes_json)
 	var py = spawn('python3', ['./python/test.py', func_name, clothes_string])// nodejs_communicator
-	console.log(clothes_json)
+	console.log(py)
 	/*Here we are saying that every time our node application receives data from the python process output stream(on 'data'), we want to convert that received data into a string and append it to the overall dataString.*/
 	py.stdout.on('data', (data) => {
 		console.log(data.toString())
