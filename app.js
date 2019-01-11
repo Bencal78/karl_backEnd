@@ -6,8 +6,8 @@ var path = require('path');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
-app.use('/api/uploads', express.static('uploads'));
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
+//app.use('/api/uploads', express.static('uploads'));
 
 var clothes = require('./routes/clothes'); //ajouter un truc comme ca quand on crée une nouvelle "class"
 var users = require('./routes/users');
