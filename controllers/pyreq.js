@@ -27,7 +27,7 @@ const get = async (req, res, next) => {
 	console.log(clothes_json)
 	/*Here we are saying that every time our node application receives data from the python process output stream(on 'data'), we want to convert that received data into a string and append it to the overall dataString.*/
 	py.stdout.on('data', (data) => {
-		console.log(data.toString())
+		console.log(data.toString().replace(/'/g, '"'))
 		result = JSON.parse(data.toString().replace(/'/g, '"'))
   		return res.status(200).json(result);
 	});
