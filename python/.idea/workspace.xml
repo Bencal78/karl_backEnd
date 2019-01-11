@@ -63,8 +63,8 @@
       <list>
         <option value="$PROJECT_DIR$/Outfit/outfit.py" />
         <option value="$PROJECT_DIR$/Outfit/outfits.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/nodejs_communicator.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
