@@ -11,6 +11,8 @@ def return_outfit():
     return outfits
 
 if __name__ == "__main__":
+    print("eee")
+    return
     functions = {'return_outfit': return_outfit}
     try:
         res_json = functions[sys.argv[1]]()
