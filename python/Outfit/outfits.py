@@ -17,12 +17,12 @@ def create_outfit(clothes):
         outfit.append(clothes_df.loc[(clothes_df.bp_1 == 1) & (clothes_df.layer == 2), "_id"].sample(n=1).values[0])
     if np.random.randint(4) == 0:
         outfit.append(clothes_df.loc[(clothes_df.bp_1 == 1) & (clothes_df.layer == 3), "_id"].sample(n=1).values[0])
-    print(clothes_df.loc[clothes_df._id == outfit[0]])
-    return outfit
+    ids = clothes_df.loc[clothes_df._id.isin(outfit)].index.values
+    outfits_list = [clothes[id_clothes] for id_clothes in ids]
+    return outfits_list
 
 
 if __name__ == "__main__":
     with open('../database/clothes.json') as data_file:
         clothes = json.load(data_file)["clothes"]
     outfit = create_outfit(clothes)
-    clothes[]
