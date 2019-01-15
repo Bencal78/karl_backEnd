@@ -4,7 +4,7 @@ var TasteSchema = require('./tasteSchema');
 var ClotheSchema = require('./clotheSchema');
 
 var schema = new Schema({
-	idGoogle : Number,
+	idGoogle : String,
 	firstName : String,
 	lastName : String,
 	givenName : String,
