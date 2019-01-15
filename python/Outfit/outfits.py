@@ -3,6 +3,8 @@ import pandas as pd
 import json
 
 
+
+
 def create_outfit(clothes):
 
     clothes_df = pd.DataFrame(clothes)
