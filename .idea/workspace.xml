@@ -3490,6 +3490,28 @@
       <change beforePath="$PROJECT_DIR$/../calendar/node_modules/googleapis/tsconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../calendar/node_modules/googleapis/tsconfig.tools.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../calendar/quickstart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/pyreq.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pyreq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Outfit/outfits.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Outfit/outfits.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/nodejs_communicator.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/nodejs_communicator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schemas/userSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/userSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/ 5acdcfb8f36d285dd8f278a6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37d0077a640bb69e695f08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37db13f128eb034baa5578.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37db5af128eb034baa558c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37dd1bf128eb034baa5597.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37dd1bf128eb034baa5598.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55c8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55c9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55ce.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55dc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd5987a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd5987c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd59880.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd5988a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/5acdd76bf36d285dd8f27b32.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../outfit/OfWeather.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../outfit/choice.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../outfit/generateOutput.py" beforeDir="false" />
@@ -3898,43 +3920,49 @@
     <session id="-311513693">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="js" value="1" />
+          <entry key="json" value="1" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="1681" />
-          <entry key="py" value="886" />
+          <entry key="Python Console" value="1966" />
+          <entry key="py" value="2965" />
           <entry key="txt" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="59" />
-          <entry key="Python" value="2567" />
+          <entry key="Python" value="4931" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/Outfit/outfits.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" selection-start-line="25" selection-start-column="13" selection-end-line="26" />
+            <state relative-caret-position="141">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -3942,14 +3970,51 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/python/Outfit/tastes_test.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/nodejs_communicator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="121">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/pyreq.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51">
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/Outfit/tastes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/database/clothes.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1360" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/Outfit/form.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -3963,6 +4028,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>json</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -3971,13 +4041,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/python/Outfit/outfits.py" />
+        <option value="$PROJECT_DIR$/python/Outfit/form.py" />
         <option value="$PROJECT_DIR$/python/Outfit/tastes_test.py" />
+        <option value="$PROJECT_DIR$/python/Outfit/tastes.py" />
+        <option value="$PROJECT_DIR$/python/nodejs_communicator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="168" />
-    <option name="y" value="-6" />
+    <option name="x" value="262" />
+    <option name="y" value="-18" />
     <option name="width" value="1401" />
     <option name="height" value="1029" />
   </component>
@@ -3994,6 +4068,11 @@
             <path>
               <item name="karl_backEnd" type="b2602c69:ProjectViewProjectNode" />
               <item name="karl_backEnd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="karl_backEnd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="karl_backEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="karl_backEnd" type="b2602c69:ProjectViewProjectNode" />
@@ -4020,6 +4099,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -4069,9 +4149,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.26868328" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.5177936" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.19572954" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.42704627" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -4093,22 +4173,61 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Machine Learning 2/LAB1/lab1.py" />
-    <entry file="file://$PROJECT_DIR$/python/Outfit/outfits.py">
+    <entry file="file://$PROJECT_DIR$/python/Outfit/tastes_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="25" selection-start-column="13" selection-end-line="26" />
+        <state relative-caret-position="149">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/Outfit/tastes_test.py">
+    <entry file="file://$PROJECT_DIR$/python/database/clothes.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state relative-caret-position="-1360" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/pyreq.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/nodejs_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/Outfit/tastes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/Outfit/form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/Outfit/outfits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
