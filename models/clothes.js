@@ -12,10 +12,12 @@ exports.create = function(values) {
 
 exports.get = function(values) {
   var query = Clothe.find(null);
-  var fields = Object.keys(values);
-  fields.forEach(x => {
-      query.where(x, values[x]);
-  });
+  if(values){
+    var fields = Object.keys(values);
+    fields.forEach(x => {
+        query.where(x, values[x]);
+    });
+  }
   return query.exec();
 };
 
