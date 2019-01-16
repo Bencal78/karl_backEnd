@@ -10,6 +10,7 @@ var schema = new Schema({
   temperature: Number,
   pattern: String,
   layer: Number,
+  rl_score: Number,
 }, {versionKey: 'version'});
 
 module.exports = schema;
