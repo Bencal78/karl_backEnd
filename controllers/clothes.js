@@ -2,7 +2,14 @@ var model = require('../models/clothes');
 
 const create = async (req, res, next) => {
   try{
+    if(Array.isArray(req.body)){
+      req.body.forEach(r => {
+        await model.create(r);
+      });
+    }
+    else {
       var response = (await model.create(req.body));
+    }
   }catch(e){
       next(e);
   }
