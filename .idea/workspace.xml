@@ -3490,28 +3490,8 @@
       <change beforePath="$PROJECT_DIR$/../calendar/node_modules/googleapis/tsconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../calendar/node_modules/googleapis/tsconfig.tools.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../calendar/quickstart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/pyreq.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pyreq.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Outfit/outfits.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Outfit/outfits.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/nodejs_communicator.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/nodejs_communicator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schemas/userSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/userSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/ 5acdcfb8f36d285dd8f278a6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37d0077a640bb69e695f08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37db13f128eb034baa5578.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37db5af128eb034baa558c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37dd1bf128eb034baa5597.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37dd1bf128eb034baa5598.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55c8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55c9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55ce.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a37efd8f128eb034baa55dc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd5987a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd5987c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd59880.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5a98088452a28c417cd5988a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/5acdd76bf36d285dd8f27b32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Outfit/tastes.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Outfit/tastes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../outfit/OfWeather.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../outfit/choice.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../outfit/generateOutput.py" beforeDir="false" />
@@ -3921,48 +3901,50 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="1" />
           <entry key="json" value="1" />
-          <entry key="py" value="7" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="Python" value="7" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="1966" />
-          <entry key="py" value="2965" />
+          <entry key="Python Console" value="2044" />
+          <entry key="py" value="4088" />
           <entry key="txt" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="59" />
-          <entry key="Python" value="4931" />
+          <entry key="Python" value="6132" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/Outfit/outfits.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="425">
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -3973,11 +3955,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/nodejs_communicator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -3985,29 +3964,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/pyreq.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
+            <state relative-caret-position="85">
               <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/Outfit/tastes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+            <state relative-caret-position="391">
+              <caret line="80" column="49" lean-forward="true" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#133#2783#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/database/clothes.json">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1360" />
+            <state relative-caret-position="174">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="1663" selection-start-line="1663" selection-end-line="1663" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/database/clothes.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -4031,6 +4027,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>json</find>
+      <find>max</find>
+      <find>excel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -4044,13 +4042,13 @@
         <option value="$PROJECT_DIR$/python/Outfit/outfits.py" />
         <option value="$PROJECT_DIR$/python/Outfit/form.py" />
         <option value="$PROJECT_DIR$/python/Outfit/tastes_test.py" />
-        <option value="$PROJECT_DIR$/python/Outfit/tastes.py" />
         <option value="$PROJECT_DIR$/python/nodejs_communicator.py" />
+        <option value="$PROJECT_DIR$/python/Outfit/tastes.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="262" />
+    <option name="x" value="261" />
     <option name="y" value="-18" />
     <option name="width" value="1401" />
     <option name="height" value="1029" />
@@ -4113,6 +4111,34 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="tastes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="backEnd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python/Outfit" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/Outfit/tastes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tastes" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -4138,20 +4164,20 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14467409" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18282989" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3291815" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3985765" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.5177936" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3469751" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.42704627" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.42704627" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -4173,47 +4199,33 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Machine Learning 2/LAB1/lab1.py" />
-    <entry file="file://$PROJECT_DIR$/python/Outfit/tastes_test.py">
+    <entry file="file://$PROJECT_DIR$/python/Outfit/tastes_test.py" />
+    <entry file="file://$PROJECT_DIR$/python/Outfit/outfits.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+        <state relative-caret-position="425">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/database/clothes.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/pyreq.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/nodejs_communicator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/Outfit/tastes.py">
+    <entry file="file://$PROJECT_DIR$/controllers/pyreq.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/database/clothes.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/python/Outfit/form.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -4222,12 +4234,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/Outfit/outfits.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="157">
+          <caret line="1663" selection-start-line="1663" selection-end-line="1663" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/Outfit/tastes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="80" column="49" lean-forward="true" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#133#2783#0" />
           </folding>
         </state>
       </provider>
