@@ -973,7 +973,7 @@
             ],
             "_id": "5c339214b03bdf179c550000",
             "name": "Xmas sweater",
-            "category": "sweaeter",
+            "category": "sweater",
             "fabrics": "wool",
             "temperature": 6,
             "pattern": "Xmas",
@@ -1343,5 +1343,13 @@
             "layer": 3,
             "version": 0
         }
-    ]
+    ],
+    "rl_cat_score": {
+        "1" : {"tshirt": 0.2,
+            "shirt" : 0.1
+        },
+        "2" : {"pants": 0.5}, 
+        "3" : {},
+        "4" : {}
+    }
 }

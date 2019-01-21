@@ -1,7 +1,7 @@
 import sys
 import json
 import variables
-import Outfit.outfits as outfit
+import Outfit.outfit as outfit
 
 
 def return_outfit():
@@ -16,8 +16,7 @@ def return_outfit():
 
 if __name__ == "__main__":
 
-    functions = {'return_outfit': return_outfit}#,
-                 #'return_tastes_test': return_tastes_test}
+    functions = {'return_outfit': return_outfit}
 
     res_json = functions[sys.argv[1]]()
 
