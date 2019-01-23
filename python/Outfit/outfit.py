@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import json
+import sys
 
 def create_outfit(clothes):
 
@@ -20,7 +21,7 @@ def create_outfit(clothes):
 
 
 if __name__ == "__main__":
-    with open('../database/clothes.json') as data_file:
+    with open('../database/clothes3.json') as data_file:
         clothes = json.load(data_file)["clothes"]
     dec = 0
     decisions = list()
@@ -30,8 +31,10 @@ if __name__ == "__main__":
         for clothe in outfit:
             print(clothe["name"])
         print()
-        dec = input("y for yes; n for no; q to quit\n")
+        dec = input("y for yes; n for no; q to quit; c to cancel\n")
         print("-------------------")
+        if dec == "c":
+            sys.exit()
         if dec not in ["y", "n"]:
             continue
         decisions.append({"outfit": outfit, "decision": True if dec == "y" else False})
