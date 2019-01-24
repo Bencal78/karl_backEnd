@@ -1,7 +1,7 @@
 import sys
 import json
-import variables
 import Outfit.outfit as outfit
+import Outfit.reinforcement_learning as rl
 
 
 def return_outfit():
@@ -16,7 +16,8 @@ def return_outfit():
 
 if __name__ == "__main__":
 
-    functions = {'return_outfit': return_outfit}
+    functions = {'return_outfit': return_outfit,
+                 'return_outfit_rl': rl.return_outfit}
 
     res_json = functions[sys.argv[1]]()
 
