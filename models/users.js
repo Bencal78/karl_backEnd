@@ -34,7 +34,7 @@ exports.update = function(body) {
 
 exports.addTaste = function(body) {
   return User.findOne({_id: body._id}, function(err, usr){
-    usr.tastes.push(body.tatses)
+    usr.tastes.push(body.tastes)
     usr.save(function(err) {
     });
   });

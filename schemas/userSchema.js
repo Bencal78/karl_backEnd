@@ -12,7 +12,8 @@ var schema = new Schema({
 	age : Number,
 	genre : String,
 	tastes : [TasteSchema],
-	clothes: [ClotheSchema]
+	clothes: [ClotheSchema],
+	rl_cat_score: Object
 }, {versionKey: 'version'});
 
 module.exports = schema;

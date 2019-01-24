@@ -4,7 +4,7 @@ const create = async (req, res, next) => {
   try{
     if(Array.isArray(req.body)){
       req.body.forEach(r => {
-        await model.create(r);
+        model.create(r);
       });
     }
     else {
