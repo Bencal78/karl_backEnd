@@ -37,7 +37,7 @@ def create_outfit(user, algo = "random"):
     Creates an outfit with the algorithm specified
     :param user: information of the user, including clothes and tastes
     :param algo: the algorithm to be chosen to create an outfit
-    :return:
+    :return: an outfit
     """
 
     outfit = list()
