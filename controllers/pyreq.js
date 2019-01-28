@@ -16,20 +16,24 @@ const get = async (req, res, next) => {
     }
     switch (func_name) {
       case "return_outfit_quizz_start":
-      return_outfit_quizz_start(req, res, next)
-      break;
+        return_outfit_quizz_start(req, res, next)
+        break;
 
       case "return_outfit":
-      return_outfit(req, res, next)
-      break;
+        return_outfit(req, res, next)
+        break;
 
       case "return_outfit_rl":
-      return_outfit_rl(req, res, next)
-      break;
+        return_outfit_rl(req, res, next)
+        break;
+
+      case "quizz_start_rl":
+        quizz_start_rl(req, res, next)
+        break;
 
       case "return_outfit_nb":
-      return_outfit_nb(req, res, next)
-      break;
+        return_outfit_nb(req, res, next)
+        break;
 
       default:
 
@@ -68,53 +72,81 @@ let return_outfit_quizz_start = async (req, res, next) => {
 
 let return_outfit_rl = async(req, res, next) => {
   var id = req.query.id
+  // get requested id
   if(!id){
     return res.status(404)
   }
+  // get user from MongoDB
   try{
     var user = (await users.get({_id: id}))[0];
   }
   catch (e){
     return next(e);
   }
-
   var user = user.toJSON()
   if (!("rl_cat_score" in user)){
     user["rl_cat_score"] = {0: {}, 1: {}, 2: {}, 3: {}}
   }
   if (!("tastes" in user)){
-    user["last_taste"] = "None"
+    tastes = false;
   }
   else {
-    user["last_taste"] = user.tastes.slice(-1)[0]
+    tastes = user["tastes"]
   }
-  var clothes_json = {"clothes": user.clothes, "rl_cat_score": user.rl_cat_score, "last_taste": user.last_taste}
+  if (!("clothes" in user)){
+    return res.status(501).json({"error": "no field 'clothes' for this user : "+id+". Cannot create an outfit without clothes"});
+  }
+  else{
+    if (user["clothes"].length == 0){
+      return res.status(501).json({"error": "field 'clothes' empty for this user : "+id+". Cannot create an outfit without clothes"});
+    }
+  }
 
-  var clothes_string = JSON.stringify(clothes_json)
-  var py = spawn('python3', ['./python/nodejs_communicator.py', req.query.func_name, clothes_string])// nodejs_communicator
+
+  var args_json = {"clothes": user.clothes, "rl_cat_score": user.rl_cat_score, "tastes": tastes}
+  var args_string = JSON.stringify(args_json)
+  var py = spawn('python3', ['./python/nodejs_communicator.py', req.query.func_name, args_string])// nodejs_communicator
   /*Here we are saying that every time our node application receives data from the python process output stream(on 'data'), we want to convert that received data into a string and append it to the overall dataString.*/
-
   let result = '';
   py.stdout.on('data', data => {
       result += data.toString();
-      // Or Buffer.concat if you prefer.
   });
-  py.stdout.on('end', () => {
-      try {
-        // If JSON handle the data
-        result = JSON.parse(result.replace(/'/g, '"'))
-        console.log(result);
-        return res.status(200).json(result["outfit"]);
-      } catch (e) {
-        // Otherwise treat as a log entry
-        console.log(result);
+  py_res = py.stdout.on('end', () => {
+    try {
+      // If JSON handle the data
+      py_res = JSON.parse(result.replace(/'/g, '"'))
+      if ("clothes" in py_res){
+        user.clothes = py_res["clothes"]
       }
+      if ("rl_cat_score" in py_res){
+        user.rl_cat_score = py_res["rl_cat_score"]
+      }
+      if ("tastes" in py_res){
+        console.log("tastes returned");
+        user.tastes = py_res["tastes"]
+      }
+      if ("outfit" in py_res){
+        outfit = py_res["outfit"]
+      }
+      else{
+        return res.status(500).json({"error": "no outfit returned (python issue)"});
+      }
+      try{
+        users.update(user);
+      }
+      catch (e){
+        return next(e);
+      }
+      return res.status(200).json({"outfit": outfit});
+
+    }catch (e) {
+      // Otherwise treat as a log entry
+      console.log(py_res);
+    }
   });
-  // py.stdout.on('data', (data) => {
-  //   result = JSON.parse(data.toString().replace(/'/g, '"'))
-  //   return res.status(200).json(result["outfit"]);
-  // });
 }
+
+
 
 let return_outfit = async(req, res, next) => {
   try{

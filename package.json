@@ -1,7 +1,7 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "Server to communicate with android app and mongoDB",
+  "description": "Server to communicate with android app, python and mongoDB",
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",

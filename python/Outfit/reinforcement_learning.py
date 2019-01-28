@@ -4,6 +4,7 @@ import json
 import variables as var
 import sys
 
+
 def return_outfit():
     """
     Retrieve the arguments send by the node server
@@ -17,12 +18,21 @@ def return_outfit():
     args_json = json.loads(args)
     clothes = args_json["clothes"]
     rl_cat_score = args_json["rl_cat_score"]
-    last_taste = args_json["last_taste"]
+    tastes = args_json["tastes"]
     rl = RL(clothes, rl_cat_score)
-    clothes_cat_score = rl.update_value_naive(last_taste)
-    outfit = rl.create_outfit()
+    clothes_cat_score = {}
+    if tastes:
+        for taste in tastes:
+            if taste["rl_used"]:
+                continue
+            clothes_cat_score = rl.update_value_naive(taste)
+            taste["rl_used"] = True
 
+        clothes_cat_score.update({"tastes": tastes})
+
+    outfit = rl.create_outfit()
     clothes_cat_score.update(outfit)
+
     return clothes_cat_score
 
 
@@ -43,7 +53,7 @@ class RL:
 
     def cat_score_key_to_str(self):
         """
-        prepare cat_score for the json node.js conversion (cant convert int key)
+        prepare cat_score for the json node.js conversion (js function JSON.Parse cant convert int's key)
         :return:
         """
         self.cat_score = {str(step): score_dict for step, score_dict in self.cat_score.items()}
