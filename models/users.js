@@ -33,6 +33,7 @@ exports.update = function(body) {
 };
 
 exports.addTaste = function(body) {
+  console.log("body :", body);
   return User.findOne({_id: body._id}, function(err, usr){
     usr.tastes.push(body.tastes)
     usr.save(function(err) {
