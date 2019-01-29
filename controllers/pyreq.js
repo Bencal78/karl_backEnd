@@ -2,6 +2,7 @@ var fs = require("fs");
 var spawn = require('child_process').spawn
 var clothes = require('../models/clothes');
 var users = require('../models/users');
+var request = require('request');
 
 const get = async (req, res, next) => {
   try{
@@ -146,8 +147,6 @@ let return_outfit_rl = async(req, res, next) => {
   });
 }
 
-
-
 let return_outfit = async(req, res, next) => {
   try{
   var func_name = req.query.func_name
@@ -178,6 +177,31 @@ let return_outfit = async(req, res, next) => {
       return next(e);
   }
 return res.status(200);
+}
+
+let return_weather_conditions = async(lat, lon) => {
+  let apiKey = 'a79c0ff7696c4832dd331a688434f96e';
+  let lat_s = lat + '';
+  let lon_s = lon + '';
+  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat_s}&lon=${lon_s}&appid=${apiKey}`
+  let kelvin_to_celsius_const = 273.15
+
+  request(url, function (err, response, body) {
+    if(err){
+      console.log('error:', error);
+    } else {
+      try{
+        body_json = JSON.parse(body);
+        temperature = body_json.main.temp - kelvin_to_celsius_const
+        weather = body_json["weather"][0]['main']
+        conditions = {"temperature": temperature, "weather": weather}
+        return conditions
+      }catch(e){
+        console.log(e)
+      }
+    }
+  });
+
 }
 
 

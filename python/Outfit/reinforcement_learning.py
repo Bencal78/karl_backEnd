@@ -95,8 +95,13 @@ class RL:
         """
         outfit_ids = list()
         for step in range(np.random.randint(1, var.n_step)+1):
-            cat = self.cat_score_s[step].idxmax()
-            outfit_ids.append(self.space[step][cat].idxmax())
+            uniform_cat = np.random.uniform(0.5 - var.exploration_factor, 0.5 + var.exploration_factor,
+                                            self.cat_score_s[step].shape[0])
+            cat = np.multiply(uniform_cat, self.cat_score_s[step]).idxmax()
+
+            uniform_clothe = np.random.uniform(0.5 - var.exploration_factor, 0.5 + var.exploration_factor,
+                                               self.space[step][cat].shape[0])
+            outfit_ids.append(np.multiply(uniform_clothe, self.space[step][cat]).idxmax())
         outfit = self.prepare_outfit(outfit_ids)
         return outfit
 
