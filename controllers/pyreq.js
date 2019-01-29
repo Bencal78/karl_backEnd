@@ -116,13 +116,13 @@ let return_outfit_rl = async(req, res, next) => {
       // If JSON handle the data
       py_res = JSON.parse(result.replace(/'/g, '"'))
       if ("clothes" in py_res){
+        console.log(py_res["clothes"]);
         user.clothes = py_res["clothes"]
       }
       if ("rl_cat_score" in py_res){
         user.rl_cat_score = py_res["rl_cat_score"]
       }
       if ("tastes" in py_res){
-        console.log("tastes returned");
         user.tastes = py_res["tastes"]
       }
       if ("outfit" in py_res){
@@ -141,7 +141,7 @@ let return_outfit_rl = async(req, res, next) => {
 
     }catch (e) {
       // Otherwise treat as a log entry
-      console.log(py_res);
+      console.log(e);
     }
   });
 }
