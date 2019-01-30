@@ -2,7 +2,7 @@ var fs = require("fs");
 var spawn = require('child_process').spawn
 var clothes = require('../models/clothes');
 var users = require('../models/users');
-var request = require('request');
+var request = require('request-promise');
 
 const get = async (req, res, next) => {
   try{
@@ -11,8 +11,12 @@ const get = async (req, res, next) => {
     if(!func_name){
       return res.status(404)
     }
-    var id = req.query.id
-    if(!id){
+    try{
+      var id = req.query.id
+    }catch(e){
+      console.log(e);
+    }
+    if((!id)&&(func_name!='return_weather')){
       return res.status(404)
     }
     switch (func_name) {
@@ -29,7 +33,7 @@ const get = async (req, res, next) => {
         break;
 
       case "return_weather":
-        message = return_weather(req)
+        message = await return_weather(req)
         break;
 
       case "return_outfit_nb":
@@ -43,6 +47,7 @@ const get = async (req, res, next) => {
   }catch (e){
     return next(e);
   }
+
   return res.status(200).json(message);
 };
 
@@ -57,7 +62,6 @@ let return_outfit_quizz_start = async (req, res, next) => {
 
     var clothes_json = {"clothes": all_clothes}
     var clothes_string = JSON.stringify(clothes_json)
-    console.log(req.query);
     var py = spawn('python3', ['./python/nodejs_communicator.py', req.query.func_name, clothes_string])// nodejs_communicator
     /*Here we are saying that every time our node application receives data from the python process output stream(on 'data'), we want to convert that received data into a string and append it to the overall dataString.*/
     py.stdout.on('data', (data) => {
@@ -85,6 +89,13 @@ let return_outfit_rl = async(req, res, next) => {
     return next(e);
   }
   var user = user.toJSON()
+  conditions = await return_weather(req)
+  if ("python" in conditions){
+    py_conditions = conditions.python
+  }
+  else {
+    py_conditions = false
+  }
   if (!("rl_cat_score" in user)){
     user["rl_cat_score"] = {0: {}, 1: {}, 2: {}, 3: {}}
   }
@@ -104,7 +115,7 @@ let return_outfit_rl = async(req, res, next) => {
   }
 
 
-  var args_json = {"clothes": user.clothes, "rl_cat_score": user.rl_cat_score, "tastes": tastes}
+  var args_json = {"clothes": user.clothes, "rl_cat_score": user.rl_cat_score, "tastes": tastes, "conditions": py_conditions}
   var args_string = JSON.stringify(args_json)
   var py = spawn('python3', ['./python/nodejs_communicator.py', req.query.func_name, args_string])// nodejs_communicator
   /*Here we are saying that every time our node application receives data from the python process output stream(on 'data'), we want to convert that received data into a string and append it to the overall dataString.*/
@@ -180,25 +191,33 @@ return res.status(200);
 }
 
 let return_weather = async(req) => {
+  if (!("lat" in req.query)){
+    return null
+  }
+  if (!("long" in req.query)){
+    return null
+  }
   let apiKey = 'a79c0ff7696c4832dd331a688434f96e';
   let url = `http://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.long}&appid=${apiKey}`
   let kelvin_to_celsius_const = 273.15
 
-  request(url, function (err, response, body) {
-    if(err){
-      console.log('error:', error);
-    } else {
-      try{
-        body_json = JSON.parse(body);
-        temperature = body_json.main.temp - kelvin_to_celsius_const
-        weather = body_json["weather"][0]['main']
-        conditions = {"temperature": temperature, "weather": weather}
-        return conditions
-      }catch(e){
-        console.log(e)
-      }
+  conditions = request(url).then(body => {
+    try{
+      body_json = JSON.parse(body);
+      console.log(body_json);
+      temperature = body_json.main.temp - kelvin_to_celsius_const
+      weather = body_json["weather"][0]['main']
+      conditions = {"python": {"temperature": temperature, "weather": weather}, "android": body_json}
+      return conditions
+    }catch(e){
+      console.log(e)
     }
-  });
+  }).catch(err => {
+    console.log(err);
+  })
+
+  return Promise.resolve(conditions)
+
 
 }
 

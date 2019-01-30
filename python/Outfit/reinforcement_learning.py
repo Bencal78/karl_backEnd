@@ -43,9 +43,9 @@ class RL:
     def __init__(self, clothes, rl_cat_score):
         self.clothes = clothes
         self.rl_cat_score = {int(key): value for key, value in rl_cat_score.items()}
+        self.rl_cat_score_space = {int(key): value for key, value in rl_cat_score.items()}
         self.clothes_df = self.create_df_clothes(clothes)
         self.cats_to_remove = None
-        self.rl_cat_score_space = None
         self.space = self.create_space()
         self.rl_cat_score_s = self.create_cat_score_s_key_to_int()
         self.rl_cat_score_space_s = {int(step): pd.Series(score_dict) for step, score_dict in self.rl_cat_score_space.items()}
@@ -73,14 +73,15 @@ class RL:
                                                     (self.clothes_df.layer == layer), "category"].unique())}
 
             new_cats = set(space[step].keys()) - set(self.rl_cat_score[step].keys())  # cat in space not in rl_cat_score
-            self.cats_to_remove = set(self.rl_cat_score[step].keys()) - set(space[step].keys())  # cat in rl_cat_s not in space
+            cats_to_remove = set(self.rl_cat_score[step].keys()) - set(space[step].keys())  # cat in rl_cat_s not in space
 
             self.rl_cat_score[step].update({cat: 0.0 for cat in new_cats})
+            self.rl_cat_score_space[step].update({cat: 0.0 for cat in new_cats})
 
-            self.rl_cat_score_space = self.rl_cat_score
-            for cat_to_remove in self.cats_to_remove:
-                self.rl_cat_score_space.pop(cat_to_remove, None)
-
+            print(self.rl_cat_score[step].keys())
+            for cat_to_remove in cats_to_remove:
+                self.rl_cat_score_space[step].pop(cat_to_remove, None)
+            print(self.rl_cat_score[step].keys())
         return space
 
     @staticmethod
@@ -138,7 +139,7 @@ class RL:
 
         for clothe in outfit:
             for step_cat, cat in self.rl_cat_score.items():
-                if clothe["category"] in set(cat.keys()).union(self.cats_to_remove):
+                if clothe["category"] in set(cat.keys()):
                     sorted_ids.append(step_cat)
                     break
         l3_not_l2 = True if (3 in sorted_ids) and (len(outfit) == 3) else False
@@ -210,7 +211,8 @@ if __name__ == "__main__":
     var.set_weather_params(conditions["temperature"])
     rl = RL(clothes, rl_cat_score)
     clothes_cat_score = {}
-
+    # stpo here
+    
     if tastes:
         for taste in tastes:
             if taste["rl_used"]:
@@ -224,6 +226,7 @@ if __name__ == "__main__":
     outfit = rl.create_outfit()
     clothes_cat_score.update(outfit)
     # print(clothes_cat_score["rl_cat_score"])
+    print(rl.space[1].keys())
     print(rl.rl_cat_score)
     print(rl.rl_cat_score_space)
 
