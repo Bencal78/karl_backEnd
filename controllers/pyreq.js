@@ -21,15 +21,15 @@ const get = async (req, res, next) => {
         break;
 
       case "return_outfit":
-        return_outfit(req, res, next)
+        message = return_outfit(req, res, next)
         break;
 
       case "return_outfit_rl":
-        return_outfit_rl(req, res, next)
+        message = return_outfit_rl(req, res, next)
         break;
 
-      case "quizz_start_rl":
-        quizz_start_rl(req, res, next)
+      case "return_weather":
+        message = return_weather(req)
         break;
 
       case "return_outfit_nb":
@@ -43,7 +43,7 @@ const get = async (req, res, next) => {
   }catch (e){
     return next(e);
   }
-  return res.status(200);
+  return res.status(200).json(message);
 };
 
 let return_outfit_quizz_start = async (req, res, next) => {
@@ -179,11 +179,9 @@ let return_outfit = async(req, res, next) => {
 return res.status(200);
 }
 
-let return_weather_conditions = async(lat, lon) => {
+let return_weather_conditions = async() => {
   let apiKey = 'a79c0ff7696c4832dd331a688434f96e';
-  let lat_s = lat + '';
-  let lon_s = lon + '';
-  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat_s}&lon=${lon_s}&appid=${apiKey}`
+  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.long}&appid=${apiKey}`
   let kelvin_to_celsius_const = 273.15
 
   request(url, function (err, response, body) {

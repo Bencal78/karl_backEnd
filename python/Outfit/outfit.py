@@ -10,13 +10,18 @@ def create_outfit_2(clothes):
     bodypart_df = pd.get_dummies(clothes_df.bodyparts.apply(pd.Series).stack()).sum(level=0).rename(
         columns=lambda x: "bp_{}".format(int(x)))
     df = pd.concat([clothes_df.drop(columns=['bodyparts']), bodypart_df], axis=1)
+
     temperature = np.random.randint(0, 24)
     var.set_weather_params(temperature)
-    print("Temperature: {}°C\n".format(temperature))
+
+    outfit_ids = list()
     for step in range(var.n_clothes_forced):
         bp, layer = var.params[step]
-        name = df.loc[(df[bp].sum(axis=1) == len(bp)) & (df.layer == layer), "name"].sample(1)
-        print(name)
+        outfit_ids.append(df.loc[(df[bp].sum(axis=1) == len(bp)) & (df.layer == layer)].sample(1).index.values[0])
+
+    outfits_list = [clothes[id_clothes] for id_clothes in outfit_ids]
+
+    return {"outfit": outfits_list}
 
 
 def create_outfit(clothes):
@@ -46,7 +51,9 @@ def create_outfit(clothes):
 if __name__ == "__main__":
     with open('../database/clothes3.json') as data_file:
         clothes = json.load(data_file)["clothes"]
-    create_outfit_2(clothes)
+    outfit = create_outfit_2(clothes)
+    for clothe in outfit["outfit"]:
+        print(clothe["name"])
 
 
     if False:
