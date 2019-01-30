@@ -56,13 +56,6 @@ class RL:
         """
         return {int(step): pd.Series(score_dict) for step, score_dict in self.rl_cat_score.items()}
 
-    def cat_score_key_to_str(self):
-        """
-        prepare cat_score for the json node.js conversion (js function JSON.Parse cant convert int's key)
-        :return:
-        """
-        self.cat_score_space = {str(step): score_dict for step, score_dict in self.rl_cat_score.items()}
-
     def create_space(self):
         """
         Create a space based on the user's clothes.
@@ -86,7 +79,6 @@ class RL:
             self.rl_cat_score_space = self.rl_cat_score
             for cat_to_remove in self.cats_to_remove:
                 self.rl_cat_score_space.pop(cat_to_remove, None)
-
 
         return space
 

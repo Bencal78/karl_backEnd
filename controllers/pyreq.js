@@ -179,7 +179,7 @@ let return_outfit = async(req, res, next) => {
 return res.status(200);
 }
 
-let return_weather_conditions = async() => {
+let return_weather = async() => {
   let apiKey = 'a79c0ff7696c4832dd331a688434f96e';
   let url = `http://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.long}&appid=${apiKey}`
   let kelvin_to_celsius_const = 273.15
