@@ -73,6 +73,28 @@ const addClothe = async (req, res, next) => {
   }
 };
 
+const deleteClothe = async (req, res, next) => {
+  id = req.body._id;
+  clothes = req.body.clothes;
+  console.log("type of clothes :", typeof(clothes));
+  if(id && clothes) {
+    if(!Array.isArray(clothes)){
+      let temp = [];
+      temp.push(clothes);
+      clothes = temp;
+    }
+    return model.get({_id: id}).then(result => {
+        if (result && result.length > 0) {
+            return model.deleteClothe(req.body).then(Updated => {
+                return res.status(200).json({message: 'success.'});
+            });
+        } else return res.status(400).json({error: 'Invalid data.'});
+    }).catch(function(e){
+        next(e);
+    });
+  }
+};
+
 const del = async (req, res, next) => {
   try{
       var checkIfUserExist = (await model.get(req.body));
@@ -98,3 +120,4 @@ exports.update = update;
 exports.del = del;
 exports.addTaste = addTaste;
 exports.addClothe = addClothe;
+exports.deleteClothe = deleteClothe;
