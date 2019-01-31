@@ -77,6 +77,7 @@ exports.deleteClothe = function(body, user) {
     });
     usr.save(function(err) {
     });
+  });
 };
 
 exports.delete = function(values) {
