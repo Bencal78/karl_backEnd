@@ -5,45 +5,6 @@ var users = require('../models/users');
 var request = require('request-promise');
 
 const get = async (req, res, next) => {
-  try{
-
-
-    try{
-      var id = req.query.id
-    }catch(e){
-      console.log(e);
-    }
-    switch (func_name) {
-      case "return_outfit_quizz_start":
-        return_outfit_quizz_start(req, res, next)
-        break;
-
-      case "return_outfit":
-        message = return_outfit(req, res, next)
-        console.log();
-        break;
-
-      case "return_outfit_rl":
-        message = return_outfit_rl(req, res, next)
-        break;
-
-      case "return_weather":
-        message = await return_weather(req)
-        return res.status(200).json(message);
-        break;
-
-      case "return_outfit_nb":
-        return_outfit_nb(req, res, next)
-        break;
-
-      default:
-
-    }
-
-  }catch (e){
-    return next(e);
-  }
-
 
 };
 
@@ -80,7 +41,6 @@ return res.status(200);
 const return_outfit_rl = async(req, res, next) => {
 
   var func_name = 'return_outfit_rl'
-
   var id = req.query.id
   // get requested id
   if(!id){
@@ -94,13 +54,14 @@ const return_outfit_rl = async(req, res, next) => {
     return next(e);
   }
   var user = user.toJSON()
-  conditions = await return_weather(req)
-  if ("python" in conditions){
+  conditions = await return_weather_python(req, res, next)
+  if (conditions){
     py_conditions = conditions.python
   }
   else {
     py_conditions = false
   }
+
   if (!("rl_cat_score" in user)){
     user["rl_cat_score"] = {0: {}, 1: {}, 2: {}, 3: {}}
   }
@@ -119,9 +80,9 @@ const return_outfit_rl = async(req, res, next) => {
     }
   }
 
-
   var args_json = {"clothes": user.clothes, "rl_cat_score": user.rl_cat_score, "tastes": tastes, "conditions": py_conditions}
   var args_string = JSON.stringify(args_json)
+  console.log(args_string);
   var py = spawn('python3', ['./python/nodejs_communicator.py', func_name, args_string])// nodejs_communicator
   /*Here we are saying that every time our node application receives data from the python process output stream(on 'data'), we want to convert that received data into a string and append it to the overall dataString.*/
   let result = '';
@@ -131,7 +92,9 @@ const return_outfit_rl = async(req, res, next) => {
   py_res = py.stdout.on('end', () => {
     try {
       // If JSON handle the data
+      console.log(result);
       py_res = JSON.parse(result.replace(/'/g, '"'))
+      console.log(py_res)
       if ("clothes" in py_res){
         console.log(py_res["clothes"]);
         user.clothes = py_res["clothes"]
@@ -192,6 +155,33 @@ const return_weather = async(req, res, next) => {
     console.log(err);
   })
   return res.status(200).json(conditions)
+}
+
+let return_weather_python = async(req, res, next) => {
+  if (!("lat" in req.query)){
+    return null
+  }
+  if (!("long" in req.query)){
+    return null
+  }
+  let apiKey = 'a79c0ff7696c4832dd331a688434f96e';
+  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.long}&appid=${apiKey}`
+  let kelvin_to_celsius_const = 273.15
+
+  conditions = await request(url).then(body => {
+    try{
+      body_json = JSON.parse(body);
+      temperature = body_json.main.temp - kelvin_to_celsius_const
+      weather = body_json["weather"][0]['main']
+      conditions = {"python": {"temperature": temperature, "weather": weather}, "android": body_json}
+      return conditions
+    }catch(e){
+      console.log(e)
+    }
+  }).catch(err => {
+    console.log(err);
+  })
+  return conditions
 }
 
 
