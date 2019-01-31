@@ -11,6 +11,7 @@ router.put('/', controller.update);
 router.put('/addTaste/', controller.addTaste);
 
 router.put('/addClothe/', controller.addClothe);
+router.put('/deleteClothe/', controller.deleteClothe);
 
 router.delete('/', controller.del);
 
