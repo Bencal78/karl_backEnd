@@ -11,9 +11,7 @@ def return_outfit():
     on veut envoyer une list et pas un dictionnary, du coup on envoit clothes["clothes"] et pas juste clothes.
     :return:
     """
-    arg2 = sys.argv[2]
-    clothes = json.loads(arg2)
-    outfits = outfit.create_outfit(clothes["clothes"])
+    outfits = outfit.create_outfit()
     return outfits
 
 

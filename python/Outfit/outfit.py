@@ -5,14 +5,18 @@ import sys
 import variables as var
 
 
-def create_outfit_2(clothes):
+def create_outfit():
+    args = sys.argv[2]
+    args_json = json.loads(args)
+    clothes = args_json["clothes"]
+    conditions = args_json["conditions"]
+
+    var.set_weather_params(conditions)
+
     clothes_df = pd.DataFrame(clothes)
     bodypart_df = pd.get_dummies(clothes_df.bodyparts.apply(pd.Series).stack()).sum(level=0).rename(
         columns=lambda x: "bp_{}".format(int(x)))
     df = pd.concat([clothes_df.drop(columns=['bodyparts']), bodypart_df], axis=1)
-
-    temperature = np.random.randint(0, 24)
-    var.set_weather_params(temperature)
 
     outfit_ids = list()
     for step in range(var.n_clothes_forced):
@@ -24,7 +28,8 @@ def create_outfit_2(clothes):
     return {"outfit": outfits_list}
 
 
-def create_outfit(clothes):
+@var.deprecated
+def create_outfit_2(clothes):
     """
     Create a Dataframe based on the dict of clothes
     Dummify the bodyparts' feature
