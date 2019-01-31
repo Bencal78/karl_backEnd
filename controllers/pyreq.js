@@ -29,6 +29,7 @@ const return_outfit = async (req, res, next) => {
     else {
       py_conditions = false
     }
+    console.log(py_conditions);
   	var user = user.toJSON()
     if (!("clothes" in user)){
       return res.status(501).json({"error": "no field 'clothes' for this user : "+id+". Cannot create an outfit without clothes"});
@@ -78,7 +79,6 @@ const return_outfit_rl = async(req, res, next) => {
   else {
     py_conditions = false
   }
-
   if (!("rl_cat_score" in user)){
     user["rl_cat_score"] = {0: {}, 1: {}, 2: {}, 3: {}}
   }
