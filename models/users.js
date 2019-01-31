@@ -61,8 +61,10 @@ exports.deleteClothe = function(body, user) {
           clothes_to_remove.push(clothe)
         }
       });
+      console.log("clothes to remove", clothes_to_remove);
       clothes_to_remove.forEach(clothe => {
-        var index = usr.clothes.indexOf(clothes);
+        var index = usr.clothes.indexOf(clothe);
+        console.log("index cloth", index);
         if (index > -1) {
           usr.clothes.splice(index, 1);
         }
