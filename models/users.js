@@ -57,7 +57,7 @@ exports.deleteClothe = function(body, user) {
       //First delete the clothe from user clothes
       clothes_to_remove = []
       usr.clothes.forEach(clothe => {
-        if(clothe._id == c._id.$oid){
+        if(clothe._id == c._id){
           clothes_to_remove.push(clothe)
         }
       });
