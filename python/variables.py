@@ -9,7 +9,7 @@ DATABASE = '{}/database/'.format(PATH)
 params = None  # body part and layer for each step to have a complete outfit
 n_clothes_forced = None
 n_step = 4
-exploration_factor = 0.2
+exploration_factor = 0.33
 
 
 def deprecated(func):
