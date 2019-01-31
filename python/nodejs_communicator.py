@@ -1,5 +1,4 @@
 import sys
-import json
 import Outfit.outfit as outfit
 import Outfit.reinforcement_learning as rl
 

@@ -14,7 +14,7 @@ const return_outfit = async (req, res, next) => {
 
   	var id = req.query.id
   	if(!id){
-  		return res.status(404)
+  		return res.status(404).json({"message": "Cannot return outfit without id"})
   	}
   	try{
   		var user = (await users.get({_id: id}))[0];
@@ -30,6 +30,14 @@ const return_outfit = async (req, res, next) => {
       py_conditions = false
     }
   	var user = user.toJSON()
+    if (!("clothes" in user)){
+      return res.status(501).json({"error": "no field 'clothes' for this user : "+id+". Cannot create an outfit without clothes"});
+    }
+    else{
+      if (user["clothes"].length == 0){
+        return res.status(501).json({"error": "field 'clothes' empty for this user : "+id+". Cannot create an outfit without clothes"});
+      }
+    }
   	var clothes_json = {"clothes": user.clothes, "conditions": py_conditions}
   	var clothes_string = JSON.stringify(clothes_json)
   	var py = spawn('python3', ['./python/nodejs_communicator.py', func_name, clothes_string])// nodejs_communicator
@@ -51,7 +59,7 @@ const return_outfit_rl = async(req, res, next) => {
   var id = req.query.id
   // get requested id
   if(!id){
-    return res.status(404)
+    return res.status(404).json({"message": "Cannot return outfit without id"})
   }
   // get user from MongoDB
   try{
@@ -60,7 +68,9 @@ const return_outfit_rl = async(req, res, next) => {
   catch (e){
     return next(e);
   }
+  // user tojson
   var user = user.toJSON()
+  // request for weather conditions
   conditions = await return_weather_python(req, res, next)
   if (conditions){
     py_conditions = conditions.python
@@ -89,7 +99,6 @@ const return_outfit_rl = async(req, res, next) => {
 
   var args_json = {"clothes": user.clothes, "rl_cat_score": user.rl_cat_score, "tastes": tastes, "conditions": py_conditions}
   var args_string = JSON.stringify(args_json)
-  console.log(args_string);
   var py = spawn('python3', ['./python/nodejs_communicator.py', func_name, args_string])// nodejs_communicator
   /*Here we are saying that every time our node application receives data from the python process output stream(on 'data'), we want to convert that received data into a string and append it to the overall dataString.*/
   let result = '';
@@ -103,7 +112,6 @@ const return_outfit_rl = async(req, res, next) => {
       py_res = JSON.parse(result.replace(/'/g, '"'))
       console.log(py_res)
       if ("clothes" in py_res){
-        console.log(py_res["clothes"]);
         user.clothes = py_res["clothes"]
       }
       if ("rl_cat_score" in py_res){
