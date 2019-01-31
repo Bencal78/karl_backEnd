@@ -4,8 +4,6 @@ import json
 import tastes as naive_bayes
 
 
-
-
 def create_outfit_random(clothes):
     outfit = list()  # initialization of the outfit
 
@@ -20,7 +18,7 @@ def create_outfit_random(clothes):
     outfit.append(clothes_df.loc[(clothes_df.bp_1 == 1) & (clothes_df.layer == 1), "_id"].sample(n=1).values[0])
     outfit.append(clothes_df.loc[(clothes_df.bp_5 == 1) & (clothes_df.layer == 1), "_id"].sample(n=1).values[0])
 
-    #randomly adds two other clothes on the upper layers for the top of the body
+    # randomly adds two other clothes on the upper layers for the top of the body
     if np.random.randint(2) == 0:
         outfit.append(clothes_df.loc[(clothes_df.bp_1 == 1) & (clothes_df.layer == 2), "_id"].sample(n=1).values[0])
     if np.random.randint(4) == 0:
@@ -31,6 +29,7 @@ def create_outfit_random(clothes):
     outfit_list = [clothes[id_clothes] for id_clothes in ids]
 
     return outfit_list
+
 
 def create_outfit(user, algo = "random"):
     """

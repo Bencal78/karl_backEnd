@@ -3,6 +3,8 @@ import pandas as pd
 import json
 import variables as var
 import sys
+import copy
+
 
 def return_outfit():
     """
@@ -17,36 +19,44 @@ def return_outfit():
     args_json = json.loads(args)
     clothes = args_json["clothes"]
     rl_cat_score = args_json["rl_cat_score"]
-    last_taste = args_json["last_taste"]
-    rl = RL(clothes, rl_cat_score)
-    clothes_cat_score = rl.update_value_naive(last_taste)
-    outfit = rl.create_outfit()
+    tastes = args_json["tastes"]
+    conditions = args_json["conditions"]
 
+    var.set_weather_params(conditions)
+
+    rl = RL(clothes, rl_cat_score)
+    clothes_cat_score = {}
+    if tastes:
+        for taste in tastes:
+            if taste["rl_used"]:
+                continue
+            rl.update_value_naive(taste)
+            taste["rl_used"] = True
+        clothes_cat_score = rl.prepare_update_value()
+        clothes_cat_score.update({"tastes": tastes})
+
+    outfit = rl.create_outfit()
     clothes_cat_score.update(outfit)
-    return clothes_cat_score
+    return json.dumps(clothes_cat_score, ensure_ascii=False)
 
 
 class RL:
-    def __init__(self, clothes, cat_score):
+    def __init__(self, clothes, rl_cat_score):
         self.clothes = clothes
-        self.cat_score = {int(key): value for key, value in cat_score.items()}
+        self.rl_cat_score = {int(key): value for key, value in rl_cat_score.items()}
+        self.rl_cat_score_space = None
         self.clothes_df = self.create_df_clothes(clothes)
+        self.cats_to_remove = dict()
         self.space = self.create_space()
-        self.cat_score_s = self.create_cat_score_s_key_to_int()
+        self.rl_cat_score_s = self.create_cat_score_s_key_to_int()
+        self.rl_cat_score_space_s = {int(step): pd.Series(score_dict) for step, score_dict in self.rl_cat_score_space.items()}
 
     def create_cat_score_s_key_to_int(self):
         """
         Create a dict of Series based on cat_score and convert key from str to int
         :return:
         """
-        return {int(step): pd.Series(score_dict) for step, score_dict in self.cat_score.items()}
-
-    def cat_score_key_to_str(self):
-        """
-        prepare cat_score for the json node.js conversion (cant convert int key)
-        :return:
-        """
-        self.cat_score = {str(step): score_dict for step, score_dict in self.cat_score.items()}
+        return {int(step): pd.Series(score_dict) for step, score_dict in self.rl_cat_score.items()}
 
     def create_space(self):
         """
@@ -55,14 +65,25 @@ class RL:
         :return:
         """
         space = dict()
-        for step, param in enumerate(var.params):
-            bp, layer = param
-            space[step] = {cat: self.clothes_df.loc[self.clothes_df.category == cat, ["_id", "rl_score"]].set_index("_id").rl_score
+        for step in range(var.n_step):
+            bp, layer = var.params[step]
+            space[step] = {cat: self.clothes_df.loc[self.clothes_df.category == cat, ["_id",
+                                                                                      "rl_score"]].set_index("_id").rl_score
                            for cat in
-                           list(self.clothes_df.loc[(self.clothes_df[bp] == 1) & (self.clothes_df.layer == layer), "category"].unique())}
+                           list(self.clothes_df.loc[(self.clothes_df[bp].sum(axis=1) == len(bp)) &
+                                                    (self.clothes_df.layer == layer), "category"].unique())}
 
-            new_cats = set(space[step].keys()) - set(self.cat_score[step].keys())
-            self.cat_score[step].update({cat: 0.0 for cat in new_cats})
+            new_cats = set(space[step].keys()) - set(self.rl_cat_score[step].keys())  # cat in space not in rl_cat_score
+            cats_to_remove = set(self.rl_cat_score[step].keys()) - set(space[step].keys())  # cat in rl_cat_s not in space
+            self.cats_to_remove[step] = cats_to_remove
+            self.rl_cat_score[step].update({cat: 0.0 for cat in new_cats})
+
+        self.rl_cat_score_space = copy.deepcopy(self.rl_cat_score)
+
+        for step in range(var.n_step):
+            for cat_to_remove in self.cats_to_remove[step]:
+                self.rl_cat_score_space[step].pop(cat_to_remove, None)
+
 
         return space
 
@@ -76,7 +97,7 @@ class RL:
         clothes_df = pd.DataFrame(clothes)
         bodypart_df = pd.get_dummies(clothes_df.bodyparts.apply(pd.Series).stack()).sum(level=0).rename(
             columns=lambda x: "bp_{}".format(int(x)))
-        clothes_df = pd.concat([clothes_df.drop(columns=['bodyparts']), bodypart_df], axis=1)
+        clothes_df = pd.concat([clothes_df, bodypart_df], axis=1)
         return clothes_df
 
     def create_outfit(self):
@@ -85,9 +106,14 @@ class RL:
         :return:
         """
         outfit_ids = list()
-        for step in range(np.random.randint(1, var.n_step)+1):
-            cat = self.cat_score_s[step].idxmax()
-            outfit_ids.append(self.space[step][cat].idxmax())
+        for step in range(var.n_clothes_forced):
+            uniform_cat = np.random.uniform(0.5 - var.exploration_factor, 0.5 + var.exploration_factor,
+                                            self.rl_cat_score_space_s[step].shape[0])
+            cat = np.multiply(uniform_cat, self.rl_cat_score_space_s[step]).idxmax()
+
+            uniform_clothe = np.random.uniform(0.5 - var.exploration_factor, 0.5 + var.exploration_factor,
+                                               self.space[step][cat].shape[0])
+            outfit_ids.append(np.multiply(uniform_clothe, self.space[step][cat]).idxmax())
         outfit = self.prepare_outfit(outfit_ids)
         return outfit
 
@@ -99,19 +125,70 @@ class RL:
         """
         outfit, l3_not_l2 = self.reorganize_outfit(taste["clothes"])
         reward = 1 if taste["decision"] else -1
-
         for step, clothe in enumerate(outfit):
             if (step == 2) & l3_not_l2: step += 1
-            self.space[step][clothe["category"]].loc[clothe["_id"]] += reward/(2*len(outfit))
-            self.clothes_df.loc[self.clothes_df._id == clothe["_id"], "score"] = self.space[step][clothe["category"]].loc[clothe["_id"]]
-            self.cat_score_s[step].loc[clothe["category"]] += reward/(2*len(outfit))
+            try:
+                self.space[step][clothe["category"]].loc[clothe["_id"]] += reward / (2 * len(outfit))
+            except KeyError:
+                pass
 
+            self.clothes_df.loc[self.clothes_df._id == clothe["_id"], "rl_score"] += reward/(2*len(outfit))
+            self.rl_cat_score_s[step].loc[clothe["category"]] += reward/(2*len(outfit))
+
+            try:
+                self.rl_cat_score_space_s[step].loc[clothe["category"]] += reward/(2*len(outfit))
+            except KeyError:
+                pass
+
+
+        """
         self.prepare_update_value(taste)
         self.cat_score_key_to_str()
         return {"clothes": self.clothes, "rl_cat_score": self.cat_score}
+        """
+
+    def reorganize_outfit(self, outfit):
+        sorted_ids = list()
+        for clothe in outfit:
+            for step_cat, cat in self.rl_cat_score.items():
+                if clothe["category"] in list(cat.keys()):
+                    sorted_ids.append(step_cat)
+                    break
+        l3_not_l2 = True if (3 in sorted_ids) and (len(outfit) == 3) else False
+        outfit_sorted = [clothe for _, clothe in sorted(zip(sorted_ids, outfit))]
+        return outfit_sorted, l3_not_l2
+
+    def prepare_outfit(self, outfit_ids):
+        """
+        prepapre the outfit to be send to the node server
+        :param outfit_ids: a list of clothes' id
+        :return:
+        """
+        df_ids = list(self.clothes_df.loc[self.clothes_df._id.isin(outfit_ids)].index.values)
+        outfit = {'outfit': [self.clothes[cid] for cid in df_ids]}
+        return outfit
+
+    def prepare_update_value(self):
+        clothes = list(self.clothes_df.loc[:, ~self.clothes_df.columns.str.startswith('bp_')].T.to_dict().values())
+        self.rl_cat_score = {str(step): serie.to_dict() for step, serie in self.rl_cat_score_s.items()}
+        return {"clothes": clothes, "rl_cat_score": self.rl_cat_score}
+
+    @var.deprecated
+    def prepare_update_value_d(self, taste):
+        """
+        prepare the update of cat_score and rl_score to be send to the node js server
+        :param taste:
+        :return:
+        """
+        outfit, l3_not_l2 = self.reorganize_outfit(taste["clothes"])
+        for clothe in outfit:
+            s = self.clothes_df.loc[self.clothes_df._id == clothe["_id"], "rl_score"]
+            self.clothes[s.index.values[0]]["rl_score"] = s.iloc[0]
+        self.rl_cat_score = {step: serie.to_dict() for step, serie in self.rl_cat_score_s.items()}
 
     @staticmethod
-    def reorganize_outfit(outfit):
+    @var.deprecated
+    def reorganize_outfit_d(outfit):
         """
         reorganize an outfit in this specific order:
         1. top & layer 1,
@@ -134,41 +211,49 @@ class RL:
         outfit_sorted = [outfit[cid] for cid in sorted_ids]
         return outfit_sorted, l3_not_l2
 
-    def prepare_outfit(self, outfit_ids):
-        """
-        prepapre the outfit to be send to the node server
-        :param outfit_ids: a list of clothes' id
-        :return:
-        """
-        df_ids = list(self.clothes_df.loc[self.clothes_df._id.isin(outfit_ids)].index.values)
-        outfit = {'outfit': [self.clothes[cid] for cid in df_ids]}
-        return outfit
-
-    def prepare_update_value(self, taste):
-        """
-        prepare the update of cat_score and rl_score to be send to the node js server
-        :param taste:
-        :return:
-        """
-        outfit, l3_not_l2 = self.reorganize_outfit(taste["clothes"])
-        for clothe in outfit:
-            s = self.clothes_df.loc[self.clothes_df._id == clothe["_id"], "score"]
-            self.clothes[s.index.values[0]]["score"] = s.iloc[0]
-        self.cat_score = {step: serie.to_dict() for step, serie in self.cat_score_s.items()}
 
 if __name__ == "__main__":
-    with open('../database/clothes3.json') as data_file:
-        data = json.load(data_file)
-    cat_score = data["rl_cat_score"]
-    clothes = data["clothes"]
-    for clothe in clothes:
-        clothe["rl_score"] = 0.0
 
-    print(clothes)
-    print(cat_score)
-    rl = RL(clothes, cat_score)
-    with open("tastes2.json") as file:
-        tastes = json.load(file)
+    with open('../database/args_bencal.json') as data_file:
+        args_json = json.load((data_file))
+    clothes = args_json["clothes"]
+    rl_cat_score = args_json["rl_cat_score"]
+    tastes = args_json["tastes"]
+    conditions = args_json["conditions"]
 
-    print(rl.cat_score_s[0].to_dict())
-    rl.update_value_naive(tastes[0])
+    var.set_weather_params(conditions["temperature"])
+    rl = RL(clothes, rl_cat_score)
+    clothes_cat_score = {}
+    if tastes:
+        for taste in tastes:
+            if taste["rl_used"]:
+                continue
+            rl.update_value_naive(taste)
+            taste["rl_used"] = True
+
+        clothes_cat_score = rl.prepare_update_value()
+        clothes_cat_score.update({"tastes": tastes})
+
+    outfit = rl.create_outfit()
+    # clothes_cat_score.update(outfit)
+    # # print(clothes_cat_score["rl_cat_score"])
+    # print(rl.space[1].keys())
+    # print(rl.rl_cat_score)
+    # print(rl.rl_cat_score_space)
+
+
+    # with open('../database/clothes3.json') as data_file:
+    #     data = json.load(data_file)
+    # cat_score = data["rl_cat_score"]
+    # clothes = data["clothes"]
+    # for clothe in clothes:
+    #     clothe["rl_score"] = 0.0
+    #
+    # print(clothes)
+    # print(cat_score)
+    # rl = RL(clothes, cat_score)
+    # with open("tastes2.json") as file:
+    #     tastes = json.load(file)
+    #
+    # print(rl.cat_score_s[0].to_dict())
+    # rl.update_value_naive(tastes[0])
