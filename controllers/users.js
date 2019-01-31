@@ -85,7 +85,7 @@ const deleteClothe = async (req, res, next) => {
     }
     return model.get({_id: id}).then(result => {
         if (result && result.length > 0) {
-            return model.deleteClothe(req.body).then(Updated => {
+            return model.deleteClothe(req.body, result).then(Updated => {
                 return res.status(200).json({message: 'success.'});
             });
         } else return res.status(400).json({error: 'Invalid data.'});

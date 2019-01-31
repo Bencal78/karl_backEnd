@@ -51,17 +51,32 @@ exports.addClothe = function(body) {
   });
 };
 
-exports.deleteClothe = function(body) {
+exports.deleteClothe = function(body, user) {
   return User.findOne({_id: body._id}, function(err, usr){
     body.clothes.forEach(c => {
+      //First delete the clothe from user clothes
       var index = usr.clothes.indexOf(c);
       if (index > -1) {
         usr.clothe.splice(index, 1);
       }
+      //Then delete all tastes that contain the clothe
+      tastes_to_remove = []
+      usr.tastes.forEach(t => {
+        t.clothes.forEach(clothe => {
+          if(clothe._id == c._id.$oid){
+            tastes_to_remove.push(t);
+          }
+        });
+      });
+      tastes_to_remove.forEach(t => {
+        var index = usr.tastes.indexOf(t);
+        if (index > -1) {
+          usr.tastes.splice(index, 1);
+        }
+      });
     });
     usr.save(function(err) {
     });
-  });
 };
 
 exports.delete = function(values) {
