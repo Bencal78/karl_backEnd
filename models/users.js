@@ -55,6 +55,18 @@ exports.deleteClothe = function(body, user) {
   return User.findOne({_id: body._id}, function(err, usr){
     body.clothes.forEach(c => {
       //First delete the clothe from user clothes
+      clothes_to_remove = []
+      usr.clothes.forEach(clothe => {
+        if(clothe._id == c._id.$oid){
+          clothes_to_remove.push(clothe)
+        }
+      });
+      clothes_to_remove.forEach(clothe => {
+        var index = usr.clothes.indexOf(clothes);
+        if (index > -1) {
+          usr.clothes.splice(index, 1);
+        }
+      })
       var index = usr.clothes.indexOf(c);
       if (index > -1) {
         usr.clothe.splice(index, 1);
