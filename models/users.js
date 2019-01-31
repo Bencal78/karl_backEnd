@@ -33,7 +33,6 @@ exports.update = function(body) {
 };
 
 exports.addTaste = function(body) {
-  console.log("body :", body);
   return User.findOne({_id: body._id}, function(err, usr){
     usr.tastes.push(body.tastes)
     usr.save(function(err) {
@@ -41,10 +40,24 @@ exports.addTaste = function(body) {
   });
 };
 
+
 exports.addClothe = function(body) {
   return User.findOne({_id: body._id}, function(err, usr){
     body.clothes.forEach(c => {
       usr.clothes.push(c)
+    });
+    usr.save(function(err) {
+    });
+  });
+};
+
+exports.deleteClothe = function(body) {
+  return User.findOne({_id: body._id}, function(err, usr){
+    body.clothes.forEach(c => {
+      var index = usr.clothes.indexOf(c);
+      if (index > -1) {
+        usr.clothe.splice(index, 1);
+      }
     });
     usr.save(function(err) {
     });
