@@ -8,6 +8,6 @@ var schema = new Schema({
     rl_used: Boolean,
     nb_used: Boolean,
     ts: { type: Date, default: Date.now}
-}, {versionKey: 'version'});
+}, {versionKey: 'version', timestamps: true});
 
 module.exports = schema;

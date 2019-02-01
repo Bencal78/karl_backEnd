@@ -14,8 +14,7 @@ var schema = new Schema({
 	tastes : [TasteSchema],
 	clothes: [ClotheSchema],
 	rl_cat_score: Object,
-	ts: { type: Date, default: Date.now},
 	nb_dict: Object
-}, {versionKey: 'version'});
+}, {versionKey: 'version', timestamps: true});
 
 module.exports = schema;
