@@ -40,7 +40,7 @@ exports.addTaste = function(body) {
   });
 };
 
-exports.deleteClothe = function(body, user) {
+exports.deleteTaste = function(body, user) {
   return User.findOne({_id: body._id}, function(err, usr){
     body.tastes.forEach(t => {
       //First delete the clothe from user clothes
@@ -50,7 +50,7 @@ exports.deleteClothe = function(body, user) {
           tastes_to_remove.push(taste)
         }
       });
-      console.log("clothes to remove", clothes_to_remove);
+      console.log("tastes to remove", tastes_to_remove);
       tastes_to_remove.forEach(taste => {
         var index = usr.tastes.indexOf(taste);
         if (index > -1) {
