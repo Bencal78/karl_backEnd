@@ -11,6 +11,7 @@ var schema = new Schema({
   pattern: String,
   layer: Number,
   rl_score: Number,
+  ts: { type: Date, default: Date.now}
 }, {versionKey: 'version'});
 
 module.exports = schema;
