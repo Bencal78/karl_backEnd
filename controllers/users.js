@@ -51,6 +51,27 @@ const addTaste = async (req, res, next) => {
   }
 };
 
+const deleteTaste = async (req, res, next) => {
+  id = req.body._id;
+  tastes = req.body.tastes;
+  if(id && tastes) {
+    if(!Array.isArray(tastes)){
+      let temp = [];
+      temp.push(clothes);
+      clothes = temp;
+    }
+    return model.get({_id: id}).then(result => {
+        if (result && result.length > 0) {
+            return model.deleteTaste(req.body, result).then(Updated => {
+                return res.status(200).json({message: 'success.'});
+            });
+        } else return res.status(400).json({error: 'Invalid data.'});
+    }).catch(function(e){
+        next(e);
+    });
+  }
+};
+
 const addClothe = async (req, res, next) => {
   id = req.body._id;
   clothes = req.body.clothes;
@@ -119,5 +140,6 @@ exports.get = get;
 exports.update = update;
 exports.del = del;
 exports.addTaste = addTaste;
+exports.deleteTaste = deleteTaste;
 exports.addClothe = addClothe;
 exports.deleteClothe = deleteClothe;
