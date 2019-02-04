@@ -36,6 +36,7 @@ def set_weather_params(conditions):
         params = [(['bp_1'], 1), (['bp_5', 'bp_6', 'bp_7'], 1), (['bp_1'], 2), (['bp_1'], 3)]
     else:
         temperature = conditions["temperature"]
+
         if temperature > 24:
             n_clothes_forced = 2
             params = [(['bp_1'], 1), (['bp_5'], 1), (['bp_1'], 2), (['bp_1'], 3)]
@@ -47,4 +48,4 @@ def set_weather_params(conditions):
             params = [(['bp_1'], 1), (['bp_5', 'bp_6', 'bp_7'], 1), (['bp_1'], 2), (['bp_1'], 3)]
         else:
             n_clothes_forced = 3
-            params = [(['bp_1'], 1), (['bp_5', 'bp_6', 'bp_7'], 1), (['bp_1'], 3), (['bp_1'], 3)]
+            params = [(['bp_1'], 1), (['bp_5', 'bp_6', 'bp_7'], 1), (['bp_1'], 2), (['bp_1'], 3)]
