@@ -84,7 +84,6 @@ class RL:
             for cat_to_remove in self.cats_to_remove[step]:
                 self.rl_cat_score_space[step].pop(cat_to_remove, None)
 
-
         return space
 
     @staticmethod

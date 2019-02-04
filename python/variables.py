@@ -46,5 +46,5 @@ def set_weather_params(conditions):
             n_clothes_forced = 3
             params = [(['bp_1'], 1), (['bp_5', 'bp_6', 'bp_7'], 1), (['bp_1'], 2), (['bp_1'], 3)]
         else:
-            n_clothes_forced = 4
+            n_clothes_forced = 3
             params = [(['bp_1'], 1), (['bp_5', 'bp_6', 'bp_7'], 1), (['bp_1'], 2), (['bp_1'], 3)]
