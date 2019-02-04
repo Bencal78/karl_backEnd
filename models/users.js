@@ -100,7 +100,7 @@ exports.deleteClothe = function(body, user) {
       tastes_to_remove = []
       usr.tastes.forEach(t => {
         t.clothes.forEach(clothe => {
-          if(clothe._id == c._id.$oid){
+          if(clothe._id == c._id){
             tastes_to_remove.push(t);
           }
         });
