@@ -30,8 +30,8 @@
       <file leaf-file-name="reinforcement_learning.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Outfit/reinforcement_learning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+            <state relative-caret-position="361">
+              <caret line="207" column="35" lean-forward="false" selection-start-line="207" selection-start-column="33" selection-end-line="207" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#3471#3929#0" expanded="false" />
@@ -46,8 +46,8 @@
       <file leaf-file-name="variables.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/variables.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="755">
-              <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+            <state relative-caret-position="773">
+              <caret line="49" column="80" lean-forward="false" selection-start-line="49" selection-start-column="80" selection-end-line="49" selection-end-column="80" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -89,7 +89,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>create_df_clothes</find>
-      <find>params</find>
       <find>reorganize_outfit</find>
       <find>taste</find>
       <find>outfit</find>
@@ -107,6 +106,7 @@
       <find>rl_cat_score</find>
       <find>rl_cat_score_space</find>
       <find>print</find>
+      <find>params</find>
     </findStrings>
     <replaceStrings>
       <replace>self.rl_cat_score</replace>
@@ -740,20 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Outfit/reinforcement_learning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#3471#3929#0" expanded="false" />
-            <element signature="e#6460#6782#0" expanded="false" />
-            <element signature="e#6828#7110#0" expanded="false" />
-            <element signature="e#7185#7677#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Outfit/outfit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -772,10 +758,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Outfit/reinforcement_learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="207" column="35" lean-forward="false" selection-start-line="207" selection-start-column="33" selection-end-line="207" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#3471#3929#0" expanded="false" />
+            <element signature="e#6460#6782#0" expanded="false" />
+            <element signature="e#6828#7110#0" expanded="false" />
+            <element signature="e#7185#7677#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/variables.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        <state relative-caret-position="773">
+          <caret line="49" column="80" lean-forward="false" selection-start-line="49" selection-start-column="80" selection-end-line="49" selection-end-column="80" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
